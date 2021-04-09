@@ -11,7 +11,7 @@
 		<div>
 			{% for i in customer %}
 
-			<a href="{% url 'inbox/' reciever_id=i.id %}"><br>{{i.username}}<br></a>
+			<a href="{% url 'inbox' reciever_id=i.id %}"><br>{{i.username}}<br></a>
 
 
 			{% endfor %}

@@ -10,12 +10,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
 
 
-def abc(request):
+def view_all_users_for_chat(request):
 	user = get_user_model()
 	alluser = user.objects.all()
-	print(alluser)
-
-
+	alluser = user.objects.all()
 	return render(request, 'chat/welcome.html', {'customer':alluser})
 
 
