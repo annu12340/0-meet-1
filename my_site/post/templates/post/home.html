@@ -1,0 +1,30 @@
+{% extends 'post/layout.html' %}
+
+{% block content %}
+
+<h1> Home page</h1>
+
+{% if user.is_authenticated %}
+<p>Username: {{user.username}}</p>
+<p>pk: {{user.pk}}</p>
+<p>Email: {{user.email}}</p>
+
+<ul>
+
+    {% for post in AllPosts %}
+    <li>
+        <a href=""><b>{{post.Title}}</b></a>
+
+        <p>{{post.Description}}...</p>
+
+
+        <button class="btn btn-dark"><a href="{% url 'ParticularPost' id=post.id %}"
+                                        style="color:white;text-decoration:none"> More </a>
+        </button>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+{% endblock %}

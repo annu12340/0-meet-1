@@ -1,0 +1,25 @@
+{% extends 'post/layout.html' %}
+{% block content%}
+
+<h1>{{post.Title}}</h1>
+
+<hr>
+
+<div style="font-size:20px; padding-right:10%">
+    EVERYTHING IN MODEL IS NOT DISPLAYED
+    <br>
+    {{post.Description}}
+    <br>
+    'Progress', {{post.Progress}}
+    <br>
+    'CurrentTeamSize', {{post.CurrentTeamSize}}
+    <br>
+    'InvestorSize', {{post.InvestorSize}}
+    <br>
+    'FundingAmount', {{post.FundingAmount}}
+    <br>
+
+</div>
+
+
+{% endblock%}
