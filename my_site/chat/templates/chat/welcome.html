@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chatroom 19</title>
+</head>
+<body>
+<center><h1>welcome user you made it wonderfull </h1></center>
+<div>
+	<center>
+		
+		<div>
+			{% for i in customer %}
+
+			<a href="{% url 'inbox/' reciever_id=i.id %}"><br>{{i.username}}<br></a>
+
+
+			{% endfor %}
+
+		</div>
+	</center>
+
+
+</div>
+</body>
+</html>
