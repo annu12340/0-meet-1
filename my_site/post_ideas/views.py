@@ -4,7 +4,7 @@ from .models import Idea_Post
 from .forms import Idea_PostModelForm
 
 def home(request):
-	homePost = Idea_Post.objects.all()
+	homePost = Idea_Post.objects.all().order_by('-id')
 	return render(request, 'post_ideas/home.html', {"homePost":homePost})
 
 def addPost(request):

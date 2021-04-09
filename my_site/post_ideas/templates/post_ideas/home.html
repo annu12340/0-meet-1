@@ -5,7 +5,6 @@
 <h1> Home page</h1>
 
 {% if user.is_authenticated %}
-<p>Name: {{user.first_name}} {{ user.last_name}}</p>
 <p>Username: {{user.username}}</p>
 <p>pk: {{user.pk}}</p>
 <p>Email: {{user.email}}</p>
