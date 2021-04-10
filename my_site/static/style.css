@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap");
 
 body {
@@ -20,7 +19,6 @@ picture {
   display: block;
 }
 
-/* general layout */
 .container {
   padding: 0 1rem;
   max-width: 70rem;
@@ -40,15 +38,13 @@ body {
   font-size: 1rem;
   font-weight: var(--fw-400);
   line-height: 1.6;
-  background: linear-gradient(to bottom, #d1e3fa, #e0faf4);
+  background: yellow;
 }
 
 .app {
   width: 100%;
   max-width: 100%;
   display: grid;
-  grid-template-columns: 70px minmax(200px, 1fr);
-  grid-template-areas: "nav main" "nav main";
 }
 
 .nav {
@@ -56,7 +52,8 @@ body {
   top: 0;
   left: 0;
   width: 70px;
-  height: 100vh;
+  height: 100%;
+  min-height:100vh;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   background: white;
   z-index: 20;
@@ -253,8 +250,4 @@ body {
     justify-content: space-between;
     margin-bottom: 2em;
   }
-=======
-body{
-background-color:#f1f3f5;
->>>>>>> 19d1686 (added the stylesheet)
 }
