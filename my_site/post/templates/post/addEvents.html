@@ -1,6 +1,83 @@
 {% extends "post/layout.html"%}
 {% block content%}
 {% load crispy_forms_tags %}
+<style>
+          form {
+      position: relative;
+      width: 80%;
+      border-radius: 30px;
+      background: #fff;
+      }
+      .form-left-decoration,
+      .form-right-decoration {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 20px;
+      background: #4C88CA;
+      }
+      .form-left-decoration {
+      bottom: 60px;
+      left: -30px;
+      }
+      .form-right-decoration {
+      top: 60px;
+      right: -30px;
+      }
+      .form-left-decoration:before,
+      .form-left-decoration:after,
+      .form-right-decoration:before,
+      .form-right-decoration:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 30px;
+      background: #fff;
+      }
+      .form-left-decoration:before {
+      top: -20px;
+      }
+      .form-left-decoration:after {
+      top: 20px;
+      left: 10px;
+      }
+      .form-right-decoration:before {
+      top: -20px;
+      right: 0;
+      }
+      .form-right-decoration:after {
+      top: 20px;
+      right: 10px;
+      }
+      .circle {
+      position: absolute;
+      bottom: 80px;
+      left: -55px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      }
+      .form-inner {
+      padding: 40px;
+      }
+      .form-inner input,
+      .form-inner textarea {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 20px;
+      background: #d0dfe8;
+      }
+      .form-inner textarea {
+      resize: none;
+      }
+</style>
+
 <div class="row">
 
     <div class="col-12">
@@ -8,7 +85,30 @@
         <form action="" method="post">
             {% csrf_token %}
 
-            {{ form|crispy }}
+         <div class="col-12">
+        <form action="" class="decor" method="post">
+                        {% csrf_token %}
+
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+      <div class="form-inner">
+
+          <input type="text" placeholder="Name of Event" name="ename">
+
+        <input type="date" placeholder="Date of Event" name="dateofevent">
+        <input type="text" placeholder="Type of Event" name="typeofevent">
+          <input type="text" placeholder="Place" name="place">
+
+
+        <textarea placeholder="Description..." rows="7" name="description"></textarea>
+          <input type="text" placeholder="Link to the Event" name="linktoevent">
+
+        <button type="submit" href="/post">Add Event</button>
+      </div>
+    </form>
+
+    </div>
             <button type="submit" class="btn btn-danger  btn-lg text-center">Add</button>
         </form>
     </div>

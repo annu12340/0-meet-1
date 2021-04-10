@@ -73,7 +73,21 @@
 
         </ul>
     </div>
-    <div class="col-4">Events</div>
+    <div class="col-4">Events
+
+        {% for event in AllEvents %}
+        <div class="row ">
+            <div class="col-12">
+                {{event.EventName}}
+                  {{event.EventDate}}
+{{event.EventType}}
+            </div>
+
+
+        </div>
+
+        {% endfor %}
+    </div>
 </div>
 {% endif %}
 
