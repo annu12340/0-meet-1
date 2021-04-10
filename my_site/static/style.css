@@ -1,0 +1,260 @@
+<<<<<<< HEAD
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap");
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+
+ol[class],
+ul[class] {
+  list-style: none;
+  padding: 0;
+}
+
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* general layout */
+.container {
+  padding: 0 1rem;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(1rem, 1rem);
+}
+
+body {
+  height: 100vh;
+  min-height: -webkit-fill-available;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+  background: linear-gradient(to bottom, #d1e3fa, #e0faf4);
+}
+
+.app {
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 70px minmax(200px, 1fr);
+  grid-template-areas: "nav main" "nav main";
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 100vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: white;
+  z-index: 20;
+  overflow: hidden;
+  transition: width ease 600ms;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav.is-open {
+  width: 200px;
+}
+
+.main {
+  padding: 0 1em;
+  grid-area: main;
+  background:  hsl(165, 33%, 98%);
+}
+
+
+.menu__item {
+  cursor: pointer;
+  display: block;
+  line-height: 60px;
+  padding-left: 1.8em;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+}
+
+.menu__item:hover {
+  background: #f0f3ff;
+}
+
+.menu__icon {
+  display: inline-block;
+  margin-right: 27px;
+  vertical-align: middle;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 0.8125rem;
+}
+
+.nav__link > .icon {
+  display: inline-block;
+  margin-right: 24px;
+  vertical-align: middle;
+}
+
+
+.burger {
+  width: 70px;
+  height: 60px;
+}
+
+
+/*========= Main ==========*/
+.main__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__search {
+  display: none;
+}
+
+.main__user {
+  display: flex;
+  align-items: center;
+}
+
+.main__title {
+  display: flex;
+  align-items: center;
+}
+
+.main__title > .icon {
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
+.btn__icon {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  border-radius: 11px;
+  gap: 2em;
+}
+
+.card {
+  background: white;
+  padding: 0.8em;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+     0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card__header {
+  background: #f8f9fc;
+  border-radius: 12px;
+  padding: 2em;
+  display: grid;
+  place-content: center;
+}
+
+.card__name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+@media (min-width: 48em) {
+  .app {
+    max-width: 1440px;
+    width: 100%;
+    margin: 5vh auto;
+    grid-template-columns: 266px 1fr;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.048);
+    overflow: hidden;
+  }
+
+  .nav {
+    grid-area: nav;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 266px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 2em;
+  }
+
+
+  .main {
+    padding: 0 4em;
+    overflow-y: auto;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .page {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .main__header {
+    justify-content: space-between;
+    margin-top: 3em;
+  }
+
+  .main__search {
+    display: block;
+    position: relative;
+  }
+
+  input[type=search] {
+    border: 0;
+    outline: 0;
+    background: white;
+    padding: 0.8em 1em;
+    border-radius: 12px;
+    text-indent: 2em;
+  }
+
+  .icon-search {
+    position: absolute;
+    left: 1.2em;
+    top: 1em;
+    width: 17px;
+    height: 17px;
+  }
+  .main__user {
+    gap: 1em;
+    align-items: center;
+  }
+
+  .team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+=======
+body{
+background-color:#f1f3f5;
+>>>>>>> 19d1686 (added the stylesheet)
+}
