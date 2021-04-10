@@ -19,7 +19,6 @@ def addPost(request):
 
 def addEvents(request):
     if(request.POST):
-
         ename=request.POST.get('ename')
         etype= request.POST.get('typeofevent')
         edate= request.POST.get('dateofevent')
