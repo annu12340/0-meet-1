@@ -7,4 +7,3 @@ urlpatterns = [
     path('addEvents/', views.addEvents, name="addEvents"),
     path('<int:id>/', views.ParticularPost, name='ParticularPost'),
 ]
-
