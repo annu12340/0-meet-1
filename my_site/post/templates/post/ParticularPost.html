@@ -6,26 +6,61 @@
 <hr>
 
 <div style="font-size:20px; padding-right:10%">
-    EVERYTHING IN MODEL IS NOT DISPLAYED
-    <br>
+
     {{post.Description}}
 
+
+    <!--    <img src={{post.Img}} alt="">-->
+
+
     <br>
-    History :
     <br>
-    {{post.History}}
-    <br>
-    'Progress', {{post.Progress}}
-    <br>
-    'CurrentTeamSize', {{post.CurrentTeamSize}}
-    <br>
-    'InvestorSize', {{post.InvestorSize}}
-    <br>
-    'FundingAmount', {{post.FundingAmount}}
-    <br>
-    <img src={{post.Img}} alt="">
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active pr-4"><a href="#tab1" data-toggle="tab">Section 1 </a></li>
+            <li class="pr-4"><a href="#tab2" data-toggle="tab">Section 2</a></li>
+            <li><a href="#tab3" data-toggle="tab">Section 3</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+                <p><br>
+                    History :
+                    <br>
+                    {{post.History}}
+                    <br>
+                    'Progress', {{post.Progress}}
+                    <br>
+                    'CurrentTeamSize', {{post.CurrentTeamSize}}
+                    <br>
+                    'InvestorSize', {{post.InvestorSize}}
+                    <br>
+                    'FundingAmount', {{post.FundingAmount}}
+                    <br></p>
+            </div>
+            <div class="tab-pane" id="tab2">
+                <p>I'm in Section 2.</p>
+            </div>
+            <div class="tab-pane" id="tab3">
+                <p>I'm in Section 3.</p>
+            </div>
+        </div>
+    </div>
 
 </div>
+<script>
+    $(function(){
+  var hash = window.location.hash;
+  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
+  $('.nav-tabs a').click(function (e) {
+    $(this).tab('show');
+    var scrollmem = $('body').scrollTop();
+    window.location.hash = this.hash;
+    $('html,body').scrollTop(scrollmem);
+  });
+});
+
+
+</script>
 
 {% endblock%}
