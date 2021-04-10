@@ -17,9 +17,9 @@
     <br>
     <div class="tabbable">
         <ul class="nav nav-tabs">
-            <li class="active pr-4"><a href="#tab1" data-toggle="tab">Section 1 </a></li>
-            <li class="pr-4"><a href="#tab2" data-toggle="tab">Section 2</a></li>
-            <li><a href="#tab3" data-toggle="tab">Section 3</a></li>
+            <li class="active pr-4"><a href="#tab1" data-toggle="tab">Summary</a></li>
+            <li class="pr-4"><a href="#tab2" data-toggle="tab">Financials</a></li>
+            <li><a href="#tab3" data-toggle="tab">Recent Activity</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab1">
@@ -28,20 +28,27 @@
                     <br>
                     {{post.History}}
                     <br>
-                    'Progress', {{post.Progress}}
+                    Progress: {{post.Progress}}
                     <br>
-                    'CurrentTeamSize', {{post.CurrentTeamSize}}
-                    <br>
-                    'InvestorSize', {{post.InvestorSize}}
-                    <br>
-                    'FundingAmount', {{post.FundingAmount}}
-                    <br></p>
+                    </p>
             </div>
             <div class="tab-pane" id="tab2">
-                <p>I'm in Section 2.</p>
+                <br>
+                <p>CurrentTeamSize: {{post.CurrentTeamSize}}
+                    <br>
+                    <br>
+                    InvestorSize: {{post.InvestorSize}}
+                    <br>
+                    <br>
+                    Funding Amount: {{post.FundingAmount}}
+                    <br>
+
+                </p>
             </div>
             <div class="tab-pane" id="tab3">
-                <p>I'm in Section 3.</p>
+                <p><br>
+                    Status: <br> {{post.FinancialStatus}}
+                    <br></p>
             </div>
         </div>
     </div>

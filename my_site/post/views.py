@@ -16,6 +16,22 @@ def addPost(request):
         return redirect("home")
     return render(request, "post/addPost.html", {"form": form})
 
+def addEvents(request):
+    if(request.POST):
+
+
+        ename=request.POST.get('ename')
+        etype= request.POST.get('typeofevent')
+        edate= request.POST.get('dateofevent')
+        eplace = request.POST.get('place')
+        edescrip= request.POST.get('description')
+        elink = request.POST.get('linktoevent')
+
+        E = EventsIdeaModel(EventName=ename, EventDate=edate, EventType=etype, EventPlace=eplace, Description=edescrip, EventLink=elink)
+        E.save()
+
+    return render(request, "post/addEvents.html")
+
 def ParticularPost(request,id):
     print("inside particular q id is", id)
     individual_post = PostIdeaModel.objects.get(id=id)
