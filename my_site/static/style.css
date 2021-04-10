@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap");
 
 body {
@@ -252,4 +253,8 @@ body {
     justify-content: space-between;
     margin-bottom: 2em;
   }
+=======
+body{
+background-color:#f1f3f5;
+>>>>>>> 19d1686 (added the stylesheet)
 }
