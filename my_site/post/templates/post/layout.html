@@ -19,7 +19,7 @@
          <span class="line"></span>
       </div>
 
-      <ul class="menu">
+       <ul class="menu">
          <li class="menu__item">
              <a class="nav-link" href="{% url 'home' %}"><span class="menu__icon">
                <svg width="21" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,8 +60,8 @@
 <!--         </li>-->
       </ul>
       <div class="nav__logout">
-<a class="nav-link" href="{% url 'logout' %}">
-   <span class="icon">
+         <a class="nav__link" href="#">
+            <span class="icon">
                <svg width="19" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.736 7.5h-4.6v3h4.6V15l7.668-6-7.668-6v4.5z" fill="#A4A8BD" />
                   <path d="M3.07 3h6.133V0H3.069C2.256 0 1.476.316.901.879A2.967 2.967 0 00.003 3v12c0 .796.323 1.559.898 2.121A3.102 3.102 0 003.069 18h6.134v-3H3.069V3z" fill="#A4A8BD" />
@@ -103,8 +103,10 @@
 
     {% block content %}
     {% endblock %}
-         <button class="btn btn-sm btn-warning float-right"><a class="nav-link" href="{% url 'view_all_users_for_chat' %}">CHAT</a>
-    </button>
+      <div class="float-right"> <a class="nav-link" href="{% url 'view_all_users_for_chat' %}">  <img src="https://static.thenounproject.com/png/2206184-200.png" height="50" alt=""></a>
+</div>
+
+
    </main>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
