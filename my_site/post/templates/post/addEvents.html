@@ -2,12 +2,19 @@
 {% block content%}
 {% load crispy_forms_tags %}
 <style>
+ .decor{
+background:white;
+padding:7%;
+padding-top:3%;
+
+}
           form {
       position: relative;
-      width: 80%;
+      width: 90%;
       border-radius: 30px;
-      background: #fff;
+
       }
+
       .form-left-decoration,
       .form-right-decoration {
       content: "";
@@ -34,7 +41,7 @@
       width: 50px;
       height: 20px;
       border-radius: 30px;
-      background: #fff;
+      background: #e7f5ff;
       }
       .form-left-decoration:before {
       top: -20px;
@@ -60,58 +67,52 @@
       border-radius: 50%;
       background: #fff;
       }
-      .form-inner {
-      padding: 40px;
+
+      .form-control{
+      margin:2%;
+      margin-top:2%;
+      background:#fcfdff;
       }
-      .form-inner input,
-      .form-inner textarea {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 10px;
-      border: none;
-      border-radius: 20px;
-      background: #d0dfe8;
-      }
-      .form-inner textarea {
-      resize: none;
-      }
+
 </style>
 
 <div class="row">
 
-    <div class="col-12">
-        <h1>Add Events</h1>
-        <form action="" method="post">
-            {% csrf_token %}
-
-         <div class="col-12">
-        <form action="" class="decor" method="post">
-                        {% csrf_token %}
-
-      <div class="form-left-decoration"></div>
-      <div class="form-right-decoration"></div>
-      <div class="circle"></div>
-      <div class="form-inner">
-
-          <input type="text" placeholder="Name of Event" name="ename">
-
-        <input type="date" placeholder="Date of Event" name="dateofevent">
-        <input type="text" placeholder="Type of Event" name="typeofevent">
-          <input type="text" placeholder="Place" name="place">
 
 
-        <textarea placeholder="Description..." rows="7" name="description"></textarea>
-          <input type="text" placeholder="Link to the Event" name="linktoevent">
+            <div class="col-10">
+  <br><br>
 
-        <button type="submit" href="/post">Add Event</button>
+                <form action="" class="decor" method="post">
+                     <h1>Add Events</h1>
+                    {% csrf_token %}
+
+                    <div class="form-left-decoration"></div>
+                    <div class="form-right-decoration"></div>
+                    <div class="circle"></div>
+                    <div class="form-inner">
+
+                        <input class="form-control" type="text" placeholder="Name of Event" name="ename">
+
+                        <input class="form-control" type="date" placeholder="Date of Event" name="dateofevent">
+                        <input class="form-control" type="text" placeholder="Type of Event" name="typeofevent">
+                        <input class="form-control" type="text" placeholder="Place" name="place">
+
+
+                        <textarea class="form-control" placeholder="Description..." rows="7"
+                                  name="description"></textarea>
+                        <input class="form-control" type="text" placeholder="Link to the Event" name="linktoevent">
+
+                        <center>
+                            <button type="submit" href="/post" class="btn btn-dark text-center">Add Event
+                            </button>
+                        </center>
+                    </div>
+
+                </form>
+
+
+
+            </div>
       </div>
-    </form>
-
-    </div>
-            <button type="submit" class="btn btn-danger  btn-lg text-center">Add</button>
-        </form>
-    </div>
-
-</div>
-{% endblock%}
+            {% endblock%}
