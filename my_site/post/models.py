@@ -6,15 +6,16 @@ class PostIdeaModel(models.Model):
     Description = models.CharField(max_length=200)
     Img = models.CharField(max_length=200)
 
-    Progress= models.IntegerField()
-    CurrentTeamSize= models.IntegerField()
-    InvestorSize= models.IntegerField()
+    Progress = models.IntegerField()
+    CurrentTeamSize = models.IntegerField()
+    InvestorSize = models.IntegerField()
 
     FundingAmount = models.IntegerField()
     FinancialStatus = models.CharField(max_length=200)
-    PatentDetails= models.IntegerField()
-    History=models.CharField(max_length=200)
-    createdby_id = models.IntegerField()
+    PatentDetails = models.IntegerField()
+    History = models.CharField(max_length=200)
+    # createdby_id = models.IntegerField()
+
     def __str__(self):
         return self.Title
 

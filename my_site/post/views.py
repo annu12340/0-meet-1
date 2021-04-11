@@ -9,13 +9,23 @@ def home(request):
     return render(request, 'post/home.html', {"AllPosts": AllPosts, "AllEvents": AllEvents })
 
 def addPost(request):
-    form=Idea_PostModelForm(request.POST or None)
-    if form.is_valid():
-        instance=form.save(commit=False)
-        instance.createdby_id=request.user.pk
-        instance.save()
-        return redirect("home")
-    return render(request, "post/addPost.html", {"form": form})
+    if (request.POST):
+        ptitle = request.POST.get('title')
+        pdescrip = request.POST.get('description')
+        pimg = request.POST.get('img')
+        progress = request.POST.get('progress')
+        teamsize = request.POST.get('teamsize')
+        invsize = request.POST.get('invsize')
+        fund = request.POST.get('fund')
+        finance = request.POST.get('finance')
+
+        patent = request.POST.get('patent')
+
+        history = request.POST.get('history')
+        P = PostIdeaModel(Title=ptitle, Description=pdescrip, Img=pimg, Progress=progress, CurrentTeamSize=teamsize, InvestorSize=invsize, FundingAmount=fund, FinancialStatus=finance, PatentDetails=patent, History=history )
+        P.save()
+
+    return render(request, "post/addPost.html")
 
 def addEvents(request):
     if(request.POST):
