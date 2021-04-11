@@ -14,7 +14,9 @@ class PostIdeaModel(models.Model):
     FinancialStatus = models.CharField(max_length=200)
     PatentDetails = models.IntegerField()
     History = models.CharField(max_length=200)
-    # createdby_id = models.IntegerField()
+
+
+    createdby_id = models.IntegerField()
 
     def __str__(self):
         return self.Title

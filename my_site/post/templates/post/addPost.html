@@ -2,6 +2,7 @@
 {% block content%}
 {% load crispy_forms_tags %}
 <style>
+
           form {
       position: relative;
       width: 80%;
@@ -116,7 +117,112 @@
         </form>
     </div>-->
 
+.decor{
+background:white;
+padding:5%;
+padding-right:4%;
+
+}
+          form {
+      position: relative;
+      width: 90%;
+      border-radius: 30px;
+
+      }
+
+      .form-left-decoration,
+      .form-right-decoration {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 20px;
+      background: #4C88CA;
+      }
+      .form-left-decoration {
+      bottom: 60px;
+      left: -30px;
+      }
+      .form-right-decoration {
+      top: 60px;
+      right: -30px;
+      }
+      .form-left-decoration:before,
+      .form-left-decoration:after,
+      .form-right-decoration:before,
+      .form-right-decoration:after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      border-radius: 30px;
+      background: #e7f5ff;
+      }
+      .form-left-decoration:before {
+      top: -20px;
+      }
+      .form-left-decoration:after {
+      top: 20px;
+      left: 10px;
+      }
+      .form-right-decoration:before {
+      top: -20px;
+      right: 0;
+      }
+      .form-right-decoration:after {
+      top: 20px;
+      right: 10px;
+      }
+      .circle {
+      position: absolute;
+      bottom: 80px;
+      left: -55px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      }
+
+      .form-control{
+      margin:2%;
+      margin-top:2%;
+      background:#fcfdff;
+      }
+</style>
+     <br><br>
+<div class="row ml-5">
+
+    <div class="col-9 decor">
+
+              <h1>Post an Idea</h1>
+
+      <div class="form-left-decoration"></div>
+      <div class="form-right-decoration"></div>
+      <div class="circle"></div>
+        <form action="" method="post" >
+                        {% csrf_token %}
+
+      <div class="form-inner form-group">
+
+          <input class="form-control" type="text" placeholder="Title" name="title">
+          <textarea class="form-control" placeholder="Description..." rows="7" name="description"></textarea>
+          <input class="form-control" type="url" placeholder="Link to an image" name="img">
+          <input class="form-control" type="text" placeholder="Progress" name="progress">
+          <input class="form-control" type="text" placeholder="Current Team Size" name="teamsize">
+          <input class="form-control" type="text" placeholder="Investor Size" name="invsize">
+          <input class="form-control" type="text" placeholder="Funding Amount" name="fund">
+          <input class="form-control" type="text" placeholder="Financial Status" name="finance">
+          <input class="form-control" type="text" placeholder="Patent Details" name="patent">
+>>>>>>> a10ca288c130fae9d16c56793f9b1f98e83d5a89
+
+
+ <textarea class="form-control" placeholder="History..." rows="7" name="history"></textarea>
+
+        <center><button type="submit" href="/post" class="btn btn-dark text-center" >Add Post</button></center>
+      </div>
+    </form>
 </div>
+<<<<<<< HEAD
 
 
 
@@ -134,4 +240,12 @@
 <!--    </div>-->
 
 <!--</div>-->
+=======
+    </div>
+
+
+
+
+
+>>>>>>> a10ca288c130fae9d16c56793f9b1f98e83d5a89
 {% endblock%}

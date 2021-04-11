@@ -30,6 +30,22 @@
                     <br>
                     Progress: {{post.Progress}}
                     <br>
+                     {% if post.Progress <= 30%}
+                                    <div class="progress progress-xs margin-vertical-1"
+                                         style="height:0.4em; width:150px">
+                                        <div class="progress-bar bg-danger" style="width: 10%;"></div>
+                                    </div>
+                                    {% elif post.Progress <= 60 %}
+                                    <div class="progress progress-xs margin-vertical-1"
+                                         style="height:0.5em; width:150px">
+                                        <div class="progress-bar bg-primary" style="width: 50%;"></div>
+                                    </div>
+                                    {% elif post.Progress <= 90 %}
+                                    <div class="progress progress-xs margin-vertical-1"
+                                         style="height:0.5em; width:150px">
+                                        <div class="progress-bar bg-success" style="width: 100%;"></div>
+                                    </div>
+                                    {% endif %}
                     </p>
             </div>
             <div class="tab-pane" id="tab2">
