@@ -4,7 +4,7 @@ urlpatterns = [
 
 path('all/', view_all_users_for_chat, name='view_all_users_for_chat' ),
 
-
+path('inbox/',inbox,name='inbox'),
 path('inbox/<int:reciever_id>',inbox,name='inbox'),
 
 
