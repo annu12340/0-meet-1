@@ -16,7 +16,6 @@ class PostIdeaModel(models.Model):
     History = models.CharField(max_length=200)
 
 
-    createdby_id = models.IntegerField()
 
     def __str__(self):
         return self.Title

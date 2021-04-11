@@ -73,10 +73,26 @@ padding-top:3%;
       margin-top:2%;
       background:#fcfdff;
       }
+      #leftbox {
+                float:left;
+
+                width:75%;
+
+            }
+       #rightbox{
+                float:left;
+
+                width:25%;
+
+            }
+       loc{
+       margin-top:50%
+       }
 
 </style>
 
-<div class="row">
+
+<div class="row" id="leftbox">
 
 
 
@@ -98,9 +114,7 @@ padding-top:3%;
                         <input class="form-control" type="text" placeholder="Type of Event" name="typeofevent">
                         <input class="form-control" type="text" placeholder="Place" name="place">
 
-        <center><button type="submit" href="/post" class="btn btn-danger btn-lg text-center" >Add Event</button></center>
-      </div>
-    </form>
+
 
 <!--    </div>-->
 <!--            <button type="submit" class="btn btn-danger  btn-lg text-center">Add</button>-->
@@ -116,12 +130,24 @@ padding-top:3%;
                             </button>
                         </center>
                     </div>
->>>>>>> a10ca288c130fae9d16c56793f9b1f98e83d5a89
 
                 </form>
 
 
 
             </div>
-      </div>
+
+
+      </div >
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<div class="col-5" id="rightbox" align="left" >
+            <img src="https://user-images.githubusercontent.com/45137335/114299823-03f78300-9adb-11eb-9d43-fcfaa38e0aa1.png" height="300px" width="300px" alt="">
+
+
+    </div>
+
             {% endblock%}
