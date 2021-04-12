@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages 
 from .forms import SignUpForm, EditProfileForm
-
+from django.contrib.auth.decorators import login_required
 
 def login_user (request):
 	if request.method == 'POST': #if someone fills out form , Post it 
@@ -41,6 +41,8 @@ def register_user(request):
 
 	context = {'form': form}
 	return render(request, 'authenticate/register.html', context)
+
+@login_required(login_url='login')
 
 def edit_profile(request):
 	if request.method =='POST':

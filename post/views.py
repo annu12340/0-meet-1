@@ -24,7 +24,7 @@ def addPost(request):
         history = request.POST.get('history')
 
 
-        P = PostIdeaModel(Title=ptitle, Description=pdescrip, Img=pimg, Progress=progress, CurrentTeamSize=teamsize, InvestorSize=invsize, FundingAmount=fund, FinancialStatus=finance, PatentDetails=patent, History=history,createdby_id = request.user.pk )
+        P = PostIdeaModel(Title=ptitle, Description=pdescrip, Img=pimg, Progress=progress, CurrentTeamSize=teamsize, InvestorSize=invsize, FundingAmount=fund, FinancialStatus=finance, PatentDetails=patent, History=history )
         P.save()
 
     return render(request, "post/addPost.html")
