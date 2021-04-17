@@ -1,31 +1,30 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Bootstrap Example</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="/static/style.css">
     <style>
-    @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap");
-   .messaging{
-     font-family: "Montserrat", sans-serif;
-   margin-top:0.2%;
-   }
+
+ .chat{
+ background:#F8FCFB;
+ }
 .inbox_people {
-	background: #fff;
+	background: #fdfeff;
 	float: left;
 	overflow: hidden;
 	width: 30%;
+
 	border-right: 1px solid #ddd;
 }
 
 .inbox_msg {
 	border: 1px solid #ddd;
 	clear: both;
+
 	overflow: hidden;
 }
 
@@ -51,12 +50,12 @@
 
 
 .chat_ib h5 span {
-	font-size: 13px;
+	font-size: 19px;
 	float: right;
 }
 
 .chat_ib p {
-    font-size: 12px;
+    font-size: 19px;
     color: #989898;
     margin: auto;
     display: inline-block;
@@ -200,6 +199,7 @@ height:70px;
 }
 
 .messaging {
+background:#fff;
 	padding: 0 0 50px 0;
 }
 
@@ -207,6 +207,10 @@ height:70px;
 	height: 516px;
 	overflow-y: auto;
 }
+
+.ppl-to-chat{
+font-size:16px;}
+
 
     </style>
     <meta charset="utf-8">
@@ -218,83 +222,88 @@ height:70px;
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-  <main class="main">
-   <header class="main__header">
-         <div class="main__search">
-            <input type="search" size="25" placeholder="Search" />
+<main class="main chat">
+
+    <header class="main__header ">
+        <div class="main__search">
+            <input type="search" size="25" placeholder="Search"/>
             <span class="icon-search">
                <svg width="17" height="17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.494 12.006a7.275 7.275 0 001.487-4.462C14.981 3.4 11.688 0 7.544 0S0 3.4 0 7.544s3.4 7.544 7.544 7.544c1.7 0 3.294-.532 4.462-1.488l3.188 3.188c.212.212.531.318.743.318.213 0 .532-.106.744-.319a1.027 1.027 0 000-1.487l-3.187-3.294zm-5.95.85c-2.975 0-5.419-2.337-5.419-5.312s2.444-5.419 5.419-5.419c2.975 0 5.419 2.444 5.419 5.419 0 2.975-2.444 5.312-5.42 5.312z" fill="#A4A8BD" />
+                  <path d="M13.494 12.006a7.275 7.275 0 001.487-4.462C14.981 3.4 11.688 0 7.544 0S0 3.4 0 7.544s3.4 7.544 7.544 7.544c1.7 0 3.294-.532 4.462-1.488l3.188 3.188c.212.212.531.318.743.318.213 0 .532-.106.744-.319a1.027 1.027 0 000-1.487l-3.187-3.294zm-5.95.85c-2.975 0-5.419-2.337-5.419-5.312s2.444-5.419 5.419-5.419c2.975 0 5.419 2.444 5.419 5.419 0 2.975-2.444 5.312-5.42 5.312z"
+                        fill="#A4A8BD"/>
                </svg>
             </span>
-         </div>
-         <div class="main__user">
+        </div>
+        <div class="main__user">
             <span class="main__icon">
                <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="48" height="48" rx="11" fill="#fff" />
-                  <path d="M26 30h-4c0 1.1.9 2 2 2s2-.9 2-2zM31 27h-.5c-.7-.7-1.5-1.7-1.5-3v-3c0-2.8-2.2-5-5-5s-5 2.2-5 5v3c0 1.3-.8 2.3-1.5 3H17c-.6 0-1 .4-1 1s.4 1 1 1h14c.6 0 1-.4 1-1s-.4-1-1-1z" fill="#A4A8BD" />
+                  <rect width="48" height="48" rx="11" fill="#fff"/>
+                  <path d="M26 30h-4c0 1.1.9 2 2 2s2-.9 2-2zM31 27h-.5c-.7-.7-1.5-1.7-1.5-3v-3c0-2.8-2.2-5-5-5s-5 2.2-5 5v3c0 1.3-.8 2.3-1.5 3H17c-.6 0-1 .4-1 1s.4 1 1 1h14c.6 0 1-.4 1-1s-.4-1-1-1z"
+                        fill="#A4A8BD"/>
                </svg>
             </span>
             <div class="main__avatar">
-               <img src="https://assets.codepen.io/2709552/small-avatar.png" />
+                  <img src="https://assets.codepen.io/2709552/small-avatar.png"/>
+
             </div>
             <div class="main__title">
-               <h5>  {{user.username}} </h5>
-               <span class="icon">
+                <h5> {{user.username}} </h5>
+                <span class="icon">
                   <svg width="11" height="6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M9.625.153L5.5 4.278 1.375.153l-.972.972 4.611 4.611a.687.687 0 00.972 0l4.611-4.611-.972-.972z" fill="#A4A8BD" />
+                     <path d="M9.625.153L5.5 4.278 1.375.153l-.972.972 4.611 4.611a.687.687 0 00.972 0l4.611-4.611-.972-.972z"
+                           fill="#A4A8BD"/>
                   </svg>
                </span>
             </div>
-         </div>
-      </header>
+        </div>
+    </header>
+    <br>
+    <div class="messaging">
+        <div class="inbox_msg">
+            <div class="inbox_people">
+                <div class="headind_srch">
+                    <div class="recent_heading">
+                        <h4>Recent</h4>
+                    </div>
 
-<div class="messaging">
-    <div class="inbox_msg">
-        <div class="inbox_people">
-            <div class="headind_srch">
-                <div class="recent_heading">
-                    <h4>Recent</h4>
                 </div>
+                <div class="inbox_chat scroll">
 
-            </div>
-            <div class="inbox_chat scroll">
-
-                {% for i in customer %}
-                <div class="chat_list " style="list-style-type:none">
-                    <div class="chat_people">
-                        <div class="chat_img"><img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
-                        </div>
-                        <div class="chat_ib">
-                            <li class="menu__item" style="">
-                                <a href="{% url 'inbox' reciever_id=i.id %}"><b>{{i.username}}</b></a> <span
-                                    class="chat_date">Dec 25</span>
-                            </li>
+                    {% for i in customer %}
+                    <div class="chat_list " style="list-style-type:none">
+                        <div class="chat_people">
+                            <div class="chat_img">
+                                  <img src={{i.last_name}} class="img-rounded" height="50px"/>
+                            </div>
+                            <div class="chat_ib">
+                                <li class="menu__item ppl-to-chat" style="">
+                                    <a href="{% url 'inbox' reciever_id=i.id %}"><b>{{i.username}}</b></a>
+                                </li>
 
 
+                            </div>
                         </div>
                     </div>
+
+
+                    {% endfor %}
+
                 </div>
-
-
-                {% endfor %}
-
             </div>
-        </div>
-        <div class="mesgs">
-            <div class="msg_history">
+            <div class="mesgs">
+                <div class="msg_history">
 
 
-                {% for i in msg %}
-                {% if i.sender != user %}
-                <div class="incoming_msg">
-                    <div class="incoming_msg_img"><img src="https://ptetutorials.com/images/user-profile.png"
-                                                       alt="sunil"></div>
-                    <div class="received_msg">
-                        <div class="messages received_withd_msg">
+                    {% for i in msg %}
+                    {% if i.sender != user %}
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://ptetutorials.com/images/user-profile.png"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="messages received_withd_msg">
 
-                            <div class="msgtag"><p id="message_panel" align="left">{{i.msg}}</p></div>
-    <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                                <div class="msgtag"><p id="message_panel" align="left">{{i.msg}}</p></div>
+                                <span class="time_date"> 11:01 AM    |    June 9</span></div>
                         </div>
 
 
@@ -303,7 +312,7 @@ height:70px;
 
                     <div class="outgoing_msg">
                         <div class="sent_msg">
-                            <div class="msgtag"><p  align="left">{{i.msg}}</p></div>
+                            <div class="msgtag"><p align="left">{{i.msg}}</p></div>
 
                             <span class="time_date"> 11:01 AM    |    June 9</span></div>
                     </div>
@@ -314,14 +323,14 @@ height:70px;
                 {% else %}
                 <div class="outgoing_msg">
                     <div class="sent_msg ">
-                        <div class="msgtag2"><p  align="left">{{i.msg}}</p></div>
+                        <div class="msgtag2"><p align="left">{{i.msg}}</p></div>
                         <span class="time_date"> 11:01 AM    |    June 9</span></div>
                 </div>
                 {% endif %}
                 {% endfor %}
 
 
-                <div class="type_msg">
+                <div class="type_msg" style="  position: relative;top: 140px;">
 
 
                     <div class="input_msg_write">
@@ -342,13 +351,8 @@ height:70px;
             </div>
         </div>
     </div>
-</div>
-  </main>
+    </div>
+</main>
 
 </body>
 </html>
-
-
-
-
-

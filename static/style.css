@@ -255,10 +255,3 @@ transform:translateX(-5%);
     box-shadow: var(--shadow-2);
   }
 }
-
-
-i{
-font-size:20px;
-color:red;
-background:blue !important;
-}
