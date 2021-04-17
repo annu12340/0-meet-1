@@ -2,10 +2,16 @@
 
 {% block content %}
 
+
+<div class="row">
+
+
+<div class="col-md-5">
+	<img src="https://user-images.githubusercontent.com/43414928/115121019-2b17ee00-9fce-11eb-89e7-61a9bf48349c.gif" alt="img">
+</div>
+	<div class="col-md-1"></div>
+	<div class = "col-md-5">
 <h2 class ="text-center"> Register </h2>
-
-<div class = "col-md-6 offset-md-3"> 
-
 <form method="POST" action="{% url 'register' %}">
 		{% csrf_token %}
 
@@ -14,7 +20,7 @@
                 <button class="close" data-dismiss="alert">
                     <small><sup>x</sup></small>
                   </button>
-               
+
 
                {% for field in form%}
                	{% if field.errors%}
@@ -34,7 +40,13 @@
 		{{ form.as_p }}
 
 
-		<input type="submit" value="Register" class=" btn btn-secondary">
+
+	  <center>
+       <input type="submit" value="Register" class=" btn btn-dark float-center text-center">
+        </center>
 	</form>
 </div>
+
+</div>
+
 {% endblock %}
