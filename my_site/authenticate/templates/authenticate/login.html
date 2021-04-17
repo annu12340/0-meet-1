@@ -2,27 +2,34 @@
 
 {% block content %}
 
-<h2 class ="text-center"> Login</h2>
 
-<div class = "col-md-6 offset-md-3"> 
-	<form method ="POST">
-		
-		{% csrf_token %}
+<div class="row">
+    <div class="col-md-5 ">
+        <br><br><br><br>
+        <h2 class="text-center"> Login</h2>
+        <form method="POST">
 
-	  <div class="form-group">
+            {% csrf_token %}
 
-	    <input type="text" class="form-control" placeholder="Enter Username" name = "username">
+            <div class="form-group">
 
-	  </div>
-	  <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter Username" name="username">
 
-	    <input type="password" class="form-control"  placeholder="Enter Password" name="password"> 
-	  </div>
-	 
+            </div>
+            <div class="form-group">
 
-	  <button type="submit" class="btn btn-secondary">Login</button>
-	</form>
+                <input type="password" class="form-control" placeholder="Enter Password" name="password">
+            </div>
+            <center>
+                <input type="submit" value="Login" class=" btn btn-dark float-center text-center">
+            </center>
 
+        </form>
+
+    </div>
+    <div class="col-md-4">
+        <img src="https://user-images.githubusercontent.com/43414928/115121214-0c662700-9fcf-11eb-8c3f-f100fc6eff6d.png"
+             height="600" width="600" alt="">
+    </div>
 </div>
-
 {% endblock %}

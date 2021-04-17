@@ -5,35 +5,16 @@
 
 {% if user.is_authenticated %}
 
-<div class="team">
-    <h1>HOME</h1>
-    <div class="team__setting">
-        <button class="btn btn--primary">
-               <span class="btn__icon">
-                  <svg width="14" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M6.667 8a4 4 0 100-8 4 4 0 000 8zM6.667 9.333C2.167 9.333 0 12.141 0 13.777v.89A1.333 1.333 0 001.333 16H12a1.333 1.333 0 001.333-1.333v-.89c0-1.636-2.166-4.444-6.666-4.444z"
-                           fill="#fff"/>
-                  </svg>
-               </span>
-            Add Team Member
-        </button>
-        <div class="team__icon">
-            <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 2.665h-5.333v2.667H16V2.665zM9.334 3.998a3.99 3.99 0 00-7.755-1.333H0v2.667h1.579a3.99 3.99 0 007.755-1.334zm-4 1.334a1.333 1.333 0 110-2.667 1.333 1.333 0 010 2.667zM5.333 10.665H0v2.667h5.333v-2.667zM10.667 7.998a4 4 0 103.755 5.334H16v-2.667h-1.578a4 4 0 00-3.755-2.667zm0 5.334a1.334 1.334 0 110-2.667 1.334 1.334 0 010 2.667z"
-                      fill="#A4A8BD"/>
-            </svg>
-        </div>
-    </div>
-</div>
 
 <div class="row">
-    <div class="col-8">
 
+    <div class="col-8">
+ <br> <br>
         <ul>
 
             {% for post in AllPosts %}
             <div class="row homePage-cards"
-                 style="box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); background:#fff; padding:2%; border-radius:1%">
+                 style="box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); background:#fff; padding:2%; margin-right:5%; border-radius:1%">
                 <div class="col-12">
                     <div class="media m-1">
                         <div class="d-flex mr-3">
@@ -73,21 +54,25 @@
 
         </ul>
     </div>
-    <div class="col-4">Events
- <img class="d-block img-fluid" src="https://raw.githubusercontent.com/annu12340/Mentr.me/main/static/calender.gif" width="200">
-        {% for event in AllEvents %}
-        <div class="row ">
-            <div class="col-12">
-                {{event.EventName}}
-                  {{event.EventDate}}
-{{event.EventType}}
-            </div>
 
+    <div class="col-4">
+         <br> <br>
+       <h4 style="font-weight: 600">Upcoming events</h4>
+        <img class="d-block img-fluid"
+             src="https://user-images.githubusercontent.com/43414928/115122981-7d5e0c80-9fd8-11eb-998e-d10e522850b7.gif"
+             width="400">
+        <ul>
+            {% for event in AllEvents %}
+            <li> {{event.EventName}}
+                {{event.EventDate}}
+                {{event.EventType}}
+            </li>
+        </ul>
 
-        </div>
-
-        {% endfor %}
     </div>
+
+    {% endfor %}
+</div>
 </div>
 {% endif %}
 

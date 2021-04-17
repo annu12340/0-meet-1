@@ -10,7 +10,7 @@ padding-top:3%;
 }
           form {
       position: relative;
-      width: 90%;
+      width: 100%;
       border-radius: 30px;
 
       }
@@ -89,65 +89,59 @@ padding-top:3%;
        margin-top:50%
        }
 
+
 </style>
 
 
 <div class="row" id="leftbox">
 
 
+    <div class="col-10"  >
+        <br>
+<br>
+        <form action="" class="decor" method="post">
+            <h1>Add Events</h1>
+            {% csrf_token %}
 
-            <div class="col-10">
-  <br><br>
+            <div class="form-left-decoration"></div>
+            <div class="form-right-decoration"></div>
+            <div class="circle"></div>
+            <div class="form-inner">
 
-                <form action="" class="decor" method="post">
-                     <h1>Add Events</h1>
-                    {% csrf_token %}
+                <input class="form-control" type="text" placeholder="Name of Event" name="ename">
 
-                    <div class="form-left-decoration"></div>
-                    <div class="form-right-decoration"></div>
-                    <div class="circle"></div>
-                    <div class="form-inner">
-
-                        <input class="form-control" type="text" placeholder="Name of Event" name="ename">
-
-                        <input class="form-control" type="date" placeholder="Date of Event" name="dateofevent">
-                        <input class="form-control" type="text" placeholder="Type of Event" name="typeofevent">
-                        <input class="form-control" type="text" placeholder="Place" name="place">
-
-
-
-<!--    </div>-->
-<!--            <button type="submit" class="btn btn-danger  btn-lg text-center">Add</button>-->
-<!--        </form>-->
-<!--    </div>-->
-
-                        <textarea class="form-control" placeholder="Description..." rows="7"
-                                  name="description"></textarea>
-                        <input class="form-control" type="text" placeholder="Link to the Event" name="linktoevent">
-
-                        <center>
-                            <button type="submit" href="/post" class="btn btn-dark text-center">Add Event
-                            </button>
-                        </center>
-                    </div>
-
-                </form>
+                <input class="form-control" type="date" placeholder="Date of Event" name="dateofevent">
+                <input class="form-control" type="text" placeholder="Type of Event" name="typeofevent">
+                <input class="form-control" type="text" placeholder="Place" name="place">
 
 
 
+                <textarea class="form-control" placeholder="Description..." rows="7"
+                          name="description"></textarea>
+                <input class="form-control" type="text" placeholder="Link to the Event" name="linktoevent">
+
+                <center>
+                    <button type="submit" href="/post" class="btn btn-dark text-center">Add Event
+                    </button>
+                </center>
             </div>
 
-
-      </div >
-<br>
-<br>
-<br>
-<br><br>
-<br>
-<div class="col-5" id="rightbox" align="left" >
-            <img src="https://user-images.githubusercontent.com/45137335/114299823-03f78300-9adb-11eb-9d43-fcfaa38e0aa1.png" height="300px" width="300px" alt="">
+        </form>
 
 
     </div>
+<div class="col-2" id="rightbox" align="left">
+    <br><br>
+    <img src="https://user-images.githubusercontent.com/43414928/115123948-31fa2d00-9fdd-11eb-9509-f47a62f64287.gif"
+         height="400px" width="400px" alt="">
 
-            {% endblock%}
+
+</div>
+
+</div>
+<br>
+<br>
+
+
+
+{% endblock%}
