@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'authenticate',
     'post',
     'chat',
-    'pay.apps.PayConfig',
+    # 'pay.apps.PayConfig',
+    'pay'
 
 
 ]

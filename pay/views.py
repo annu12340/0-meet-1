@@ -18,7 +18,7 @@ from django.views.generic import View
 #    template_name = 'templates/home.html'
 
 class HomePageView(TemplateView):
-    template_name = 'templates/home.html'
+    template_name = 'home.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -33,4 +33,4 @@ def charge(request):
             description='A Django charge',
             source=request.POST['stripeToken']
         )
-        return render(request, 'pay/charge.html')
+    return render(request, 'charge.html', {})
