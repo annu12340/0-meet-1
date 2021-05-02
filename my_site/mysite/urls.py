@@ -8,4 +8,5 @@ urlpatterns = [
     path('post/', include('post.urls')),
     path('', include('post.urls')), # added it here just to deploy
     path('chatroom/', include('chat.urls')),
+    path('pay/', include('payment.urls')),
 ]

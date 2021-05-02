@@ -15,8 +15,8 @@ class PostIdeaModel(models.Model):
     PatentDetails = models.IntegerField()
     History = models.CharField(max_length=200)
 
-    createdby_id= models.IntegerField()
-    createdby_image = models.CharField(max_length=200)
+    createmodelsy_id= models.IntegerField()
+    createmodelsy_image = models.CharField(max_length=200)
 
 
     def __str__(self):
@@ -33,3 +33,11 @@ class EventsIdeaModel(models.Model):
 
     def __str__(self):
         return self.EventName
+
+#
+# class Notification(models.Model):
+#         docName = models.Column(models.String(50))
+#
+#         createmodelsy_id = models.Column(models.Integer, models.ForeignKey('user.id'))
+#         createmodelsy_name = models.Column(models.String(50))
+#         status = models.Column(models.String(50), default='Pending')
