@@ -212,6 +212,7 @@ background:#fff;
 font-size:16px;}
 
 
+
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -243,7 +244,7 @@ font-size:16px;}
                </svg>
             </span>
             <div class="main__avatar">
-                  <img src="https://assets.codepen.io/2709552/small-avatar.png"/>
+                <img src="https://assets.codepen.io/2709552/small-avatar.png"/>
 
             </div>
             <div class="main__title">
@@ -273,7 +274,7 @@ font-size:16px;}
                     <div class="chat_list " style="list-style-type:none">
                         <div class="chat_people">
                             <div class="chat_img">
-                                  <img src={{i.last_name}} class="img-rounded" height="50px"/>
+                                <img src={{i.last_name}} class="img-rounded" height="50px"/>
                             </div>
                             <div class="chat_ib">
                                 <li class="menu__item ppl-to-chat" style="">
@@ -297,67 +298,52 @@ font-size:16px;}
                     {% for i in msg %}
                     {% if i.sender != user %}
                     <div class="incoming_msg">
-                        <div class="incoming_msg_img"><img src="https://ptetutorials.com/images/user-profile.png"
-                                                           alt="sunil"></div>
+
                         <div class="received_msg">
                             <div class="messages received_withd_msg">
 
                                 <div class="msgtag"><p id="message_panel" align="left">{{i.msg}}</p></div>
-                                <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                                <span class="time_date"> {{i.timestamp}}</span></div>
                         </div>
 
 
                     </div>
 
 
+                    {% else %}
                     <div class="outgoing_msg">
-                        <div class="sent_msg">
-                            <div class="msgtag"><p align="left">{{i.msg}}</p></div>
-
-                            <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                        <div class="sent_msg ">
+                            <div class="msgtag2"><p align="left">{{i.msg}}</p></div>
+                            <span class="time_date"> {{i.timestamp}}</span></div>
                     </div>
-
-                </div>
-
-
-                {% else %}
-                <div class="outgoing_msg">
-                    <div class="sent_msg ">
-                        <div class="msgtag2"><p align="left">{{i.msg}}</p></div>
-                        <span class="time_date"> 11:01 AM    |    June 9</span></div>
-                </div>
-                {% endif %}
-                {% endfor %}
+                    {% endif %}
+                    {% endfor %}
 
 
-                <div class="type_msg" style="  position: relative;top: 140px;">
+                    <div class="type_msg" style="  position: relative;top: 140px;">
 
 
-                    <div class="input_msg_write">
+                        <div class="input_msg_write">
 
 
-                        <form id="form" method="post" action="{% url 'inbox' reciever_id=reciever_id %}">
-                            {% csrf_token %}
-                            <input type="hidden" id="myUsername" value="{{user.username}}">
-                            <input type="text" class="write_msg" placeholder="Type a message" name="msg" id="msg_input">
-                            <button class="msg_send_btn" type="submit"><i class="fa fa-paper-plane"
-                                                                          aria-hidden="true"></i></button>
+                            <form id="form" method="post" action="{% url 'inbox' reciever_id=reciever_id %}">
+                                {% csrf_token %}
+                                <input type="hidden" id="myUsername" value="{{user.username}}">
+                                <input type="text" class="write_msg" placeholder="Type a message" name="msg"
+                                       id="msg_input">
+                                <button class="msg_send_btn" type="submit"><i class="fa fa-paper-plane"
+                                                                              aria-hidden="true"></i></button>
 
-                        </form>
+                            </form>
+                        </div>
+
+
                     </div>
-
-
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </main>
 
 </body>
 </html>
-
-
-
-
-

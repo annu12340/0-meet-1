@@ -6,7 +6,7 @@
 
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
-    <title>Hello, world!</title>
+    <title>0-meets-1</title>
 </head>
 <body>
 
@@ -77,15 +77,17 @@
             </div>
             <div class="main__user">
             <span class="main__icon">
+                <a href="{% url 'mynetwork' %}">
                <svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect width="48" height="48" rx="11" fill="#fff"/>
                   <path d="M26 30h-4c0 1.1.9 2 2 2s2-.9 2-2zM31 27h-.5c-.7-.7-1.5-1.7-1.5-3v-3c0-2.8-2.2-5-5-5s-5 2.2-5 5v3c0 1.3-.8 2.3-1.5 3H17c-.6 0-1 .4-1 1s.4 1 1 1h14c.6 0 1-.4 1-1s-.4-1-1-1z"
                         fill="#A4A8BD"/>
                </svg>
+                    </a>
             </span>
                 <div class="main__avatar">
 
-                    <img src="https://assets.codepen.io/2709552/small-avatar.png"/>
+                    <img class="rounded-circle"  src={{user.last_name}} width="50" height="50"/>
                 </div>
                 <div class="main__title">
                     <h5> {{user.username}} </h5>
@@ -102,7 +104,7 @@
         {% block content %}
         {% endblock %}
         <div class="float-right"><a class="nav-link" href="{% url 'inbox' %}"> <img
-                src="https://static.thenounproject.com/png/2206184-200.png" height="50" alt=""></a>
+                src={{user.username}} height="50" alt=""></a>
         </div>
 
 

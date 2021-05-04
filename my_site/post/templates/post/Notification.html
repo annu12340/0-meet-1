@@ -36,11 +36,13 @@
                         Hello, I would like to connect with you to learn more about your idea
                         {% endif %}
                         <br>
-                        <form action="" method="post">
+                        <form action="" method="post" type="hidden">
                             {% csrf_token %}
-                            <button class="btn btn-outline-secondary btn-sm">Ignore</button>
-                            <button class="btn btn-info btn-sm">Accept</button>
+
+                            <button class="btn btn-outline-secondary btn-sm" >Ignore</button>
+
                         </form>
+                         <a href="{%  url 'accept' id=n.sendfrom_id %}"><button class="btn btn-info btn-sm">Accept</button></a>
                     </div>
                 </div>
 

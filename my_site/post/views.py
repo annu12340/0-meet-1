@@ -13,6 +13,7 @@ def addPost(request):
         ptitle = request.POST.get('title')
         pdescrip = request.POST.get('description')
         pimg = request.POST.get('img')
+        ExceptedPrice=request.POST.get('price')
         progress = request.POST.get('progress')
         teamsize = request.POST.get('teamsize')
         invsize = request.POST.get('invsize')
@@ -20,7 +21,7 @@ def addPost(request):
         finance = request.POST.get('finance')
         patent = request.POST.get('patent')
         history = request.POST.get('history')
-        P = PostIdeaModel(Title=ptitle, Description=pdescrip, Img=pimg, Progress=progress, CurrentTeamSize=teamsize, InvestorSize=invsize, FundingAmount=fund, FinancialStatus=finance, PatentDetails=patent, History=history,createdby_id = request.user.pk,createdby_image=request.user.last_name )
+        P = PostIdeaModel(Title=ptitle, Description=pdescrip, Img=pimg, Progress=progress, ExceptedPrice=ExceptedPrice, CurrentTeamSize=teamsize, InvestorSize=invsize, FundingAmount=fund, FinancialStatus=finance, PatentDetails=patent, History=history,createdby_id = request.user.pk,createdby_image=request.user.last_name )
         P.save()
 
     return render(request, "post/addPost.html")
@@ -44,7 +45,6 @@ def ParticularPost(request,id):
         message = request.POST.get('message')
         n = Notification(sendfrom_id=request.user.pk,sendfrom_name=request.user.first_name,sendfrom_img=request.user.last_name,sendto_id=sendto_id,message=message)
         n.save()
-    print("inside particular q id is", id)
     individual_post = PostIdeaModel.objects.get(id=id)
     status=Notification.objects.filter(sendfrom_id=request.user.pk)
     print(status)
@@ -54,7 +54,7 @@ def ParticularPost(request,id):
             msg='Make payment'
             button_class = ''
         else:
-            msg='Request is pending'
+            msg='Request has been sent'
             button_class='btn btn-secondary btn-sm disabled'
     else:
         msg='Connect with founders'
@@ -64,9 +64,13 @@ def ParticularPost(request,id):
 
 
 def network(request):
-    if (request.POST):
-        n = Notification.objects.filter(sendto_id=request.user.pk).filter(sendfrom_id=3)[0]
-        n.status="Accepted"
-        n.save()
-    notification = Notification.objects.filter(sendto_id=request.user.pk).order_by('-id')
+    notification = Notification.objects.filter(sendto_id=request.user.pk).filter(status='Pending')
     return render(request, 'post/notification.html', {"notification": notification })
+
+
+def accept(request,id):
+    n = Notification.objects.filter(sendto_id=request.user.pk).filter(sendfrom_id=id)[0]
+    print('******************** N IS',n)
+    n.status="Accepted"
+    n.save()
+    return redirect('mynetwork')

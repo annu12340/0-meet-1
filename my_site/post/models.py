@@ -5,6 +5,7 @@ class PostIdeaModel(models.Model):
     Title = models.CharField(max_length=200)
     Description = models.CharField(max_length=200)
     Img = models.CharField(max_length=200)
+    ExceptedPrice = models.IntegerField()
 
     Progress = models.IntegerField()
     CurrentTeamSize = models.IntegerField()
@@ -12,8 +13,9 @@ class PostIdeaModel(models.Model):
 
     FundingAmount = models.IntegerField()
     FinancialStatus = models.CharField(max_length=200)
-    PatentDetails = models.IntegerField()
+    PatentDetails = models.CharField(max_length=200)
     History = models.CharField(max_length=200)
+
     createdby_id= models.IntegerField()
     createdby_image = models.CharField(max_length=200)
 
@@ -40,3 +42,6 @@ class Notification(models.Model):
         sendto_id= models.IntegerField()
         status = models.CharField(max_length=200, default="Pending")
         message= models.CharField(max_length=200)
+
+        def __str__(self):
+            return self.sendfrom_name+' to '+str(self.sendto_id)

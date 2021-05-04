@@ -7,4 +7,4 @@ class Idea_PostModelForm(forms.ModelForm):
     class Meta:
         model = PostIdeaModel
         fields = ['Title', 'Description', 'Img', 'Progress', 'CurrentTeamSize', 'InvestorSize', 'FundingAmount',
-                  'FinancialStatus', 'PatentDetails', 'History']
+                  'FinancialStatus', 'PatentDetails', 'History', 'ExceptedPrice']

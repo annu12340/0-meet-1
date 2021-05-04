@@ -11,7 +11,7 @@
 
             {% if msg == "Make payment" %}
          <button type="button" style="margin-left:70%;%" class="btn btn-info btn-sm">
-            <a href="{% url 'pay' %}">Connection accepted</a></button>
+            <a href="{% url 'pay' %}" style="color:white;text-decoration:none">Proceed with payment</a></button>
             {%else %}
            <button type="button" style="margin-left:70%;%" class="{{button_class}}" data-toggle="modal"
                 data-target="#myModal">  {{msg}} </button>
@@ -79,9 +79,12 @@
         <div class="tab-content">
             <div class="tab-pane active" id="tab1">
                 <p><br>
+                    Excepted amount : {{post.ExceptedPrice}}
+                    <br>
                     History :
                     <br>
                     {{post.History}}
+
                     <br>
                     Progress: {{post.Progress}}
                     <br>
