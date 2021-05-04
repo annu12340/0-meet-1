@@ -1,5 +1,7 @@
+{% extends "post/layout.html"%}
+{% block content%}
 <h2>
-    Buy for 5.00 Rs
+    Buy for Rs 3900
 </h2>
 <form action="{% url 'charge' %}" method="post">
 {% csrf_token %}
@@ -8,9 +10,10 @@
 
 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="{{ key }}"
-    data-description="All Books"
+    data-description="O-meets-1 Payment"
     data-amount="3900"
     data-locale="auto">
 </script>
 
 </form>
+{% endblock%}

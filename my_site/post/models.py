@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 class PostIdeaModel(models.Model):
     Title = models.CharField(max_length=200)
@@ -14,9 +14,8 @@ class PostIdeaModel(models.Model):
     FinancialStatus = models.CharField(max_length=200)
     PatentDetails = models.IntegerField()
     History = models.CharField(max_length=200)
-
-    createmodelsy_id= models.IntegerField()
-    createmodelsy_image = models.CharField(max_length=200)
+    createdby_id= models.IntegerField()
+    createdby_image = models.CharField(max_length=200)
 
 
     def __str__(self):
@@ -30,14 +29,14 @@ class EventsIdeaModel(models.Model):
     EventPlace = models.CharField(max_length=200)
     Description = models.CharField(max_length=200)
     EventLink = models.CharField(max_length=200)
-
     def __str__(self):
         return self.EventName
 
-#
-# class Notification(models.Model):
-#         docName = models.Column(models.String(50))
-#
-#         createmodelsy_id = models.Column(models.Integer, models.ForeignKey('user.id'))
-#         createmodelsy_name = models.Column(models.String(50))
-#         status = models.Column(models.String(50), default='Pending')
+
+class Notification(models.Model):
+        sendfrom_id= models.IntegerField()
+        sendfrom_name = models.CharField(max_length=200)
+        sendfrom_img = models.CharField(max_length=200)
+        sendto_id= models.IntegerField()
+        status = models.CharField(max_length=200, default="Pending")
+        message= models.CharField(max_length=200)

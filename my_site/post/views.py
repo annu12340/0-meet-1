@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, redirect
-from .models import PostIdeaModel,EventsIdeaModel
+from .models import PostIdeaModel,EventsIdeaModel, Notification
 from .forms import Idea_PostModelForm
 
 def home(request):
@@ -39,6 +39,34 @@ def addEvents(request):
     return render(request, "post/addEvents.html")
 
 def ParticularPost(request,id):
+    if (request.POST):
+        sendto_id = request.POST.get('sendto_id')
+        message = request.POST.get('message')
+        n = Notification(sendfrom_id=request.user.pk,sendfrom_name=request.user.first_name,sendfrom_img=request.user.last_name,sendto_id=sendto_id,message=message)
+        n.save()
     print("inside particular q id is", id)
     individual_post = PostIdeaModel.objects.get(id=id)
-    return render(request,'post/ParticularPost.html', { "post":individual_post})
+    status=Notification.objects.filter(sendfrom_id=request.user.pk)
+    print(status)
+    if status:
+        finalstatus=Notification.objects.filter(sendfrom_id=request.user.pk).filter(status='Accepted')
+        if finalstatus:
+            msg='Make payment'
+            button_class = ''
+        else:
+            msg='Request is pending'
+            button_class='btn btn-secondary btn-sm disabled'
+    else:
+        msg='Connect with founders'
+        button_class='btn btn-dark btn-sm'
+
+    return render(request,'post/ParticularPost.html', { "post":individual_post,"msg":msg,"button_class":button_class})
+
+
+def network(request):
+    if (request.POST):
+        n = Notification.objects.filter(sendto_id=request.user.pk).filter(sendfrom_id=3)[0]
+        n.status="Accepted"
+        n.save()
+    notification = Notification.objects.filter(sendto_id=request.user.pk).order_by('-id')
+    return render(request, 'post/notification.html', {"notification": notification })

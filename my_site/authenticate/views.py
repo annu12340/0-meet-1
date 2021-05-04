@@ -5,6 +5,14 @@ from django.contrib import messages
 from .forms import SignUpForm, EditProfileForm
 
 
+
+
+
+# WE ARE SAVING THE USER IMG IN LAST_NAME
+
+
+
+
 def login_user (request):
 	if request.method == 'POST': #if someone fills out form , Post it 
 		username = request.POST['username']
@@ -13,7 +21,7 @@ def login_user (request):
 		if user is not None:# if user exist
 			login(request, user)
 			messages.success(request,('Youre logged in'))
-			return redirect('post/') #routes to 'home' on successful login
+			return redirect('home') #routes to 'home' on successful login
 		else:
 			messages.success(request,('Error logging in'))
 			return redirect('login') #re routes to login page upon unsucessful login
@@ -23,7 +31,7 @@ def login_user (request):
 def logout_user(request):
 	logout(request)
 	messages.success(request,('Youre now logged out'))
-	return redirect('home')
+	return redirect('register')
 
 def register_user(request):
 	if request.method =='POST':

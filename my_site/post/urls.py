@@ -3,7 +3,9 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name ="home"),
+    path('<int:id>/', views.ParticularPost, name='ParticularPost'),
     path('addIdeas/', views.addPost, name ="addIdeas"),
     path('addEvents/', views.addEvents, name="addEvents"),
-    path('<int:id>/', views.ParticularPost, name='ParticularPost'),
+    path('mynetwork/', views.network, name="mynetwork"),
+
 ]

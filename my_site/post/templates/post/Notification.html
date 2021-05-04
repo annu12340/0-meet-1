@@ -1,0 +1,60 @@
+{% extends 'post/layout.html' %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+
+
+<div class="row">
+
+    <div class="col-9">
+        <br> <br>
+
+        <h3>Manage invitations</h3>
+        <div class=" homePage-cards"
+             style="margin-left:5%;box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); background:#fff; padding:2%;  border-radius:1%">
+
+            <ul>
+
+                {% for n in notification %}
+
+                <div class="row">
+                    <div class="col-3">
+                        <img src={{n.sendfrom_img}} class="img rounded-circle" alt="" width="100" height="100">
+
+
+                    </div>
+
+                    <div class="col-8">
+                        <div><b>{{n.sendfrom_name}}</b></div>
+
+                        {% if n.message|length %}
+                        {{n.message}}
+
+                        {%else%}
+                        Hello, I would like to connect with you to learn more about your idea
+                        {% endif %}
+                        <br>
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <button class="btn btn-outline-secondary btn-sm">Ignore</button>
+                            <button class="btn btn-info btn-sm">Accept</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                <hr>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+</div>
+{% endif %}
+
+{% endblock %}

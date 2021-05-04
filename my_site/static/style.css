@@ -257,3 +257,6 @@ transform:translateX(-5%);
 }
 
 
+.modal-backdrop {
+  z-index: -1;
+}

@@ -1,23 +1,77 @@
 {% extends 'post/layout.html' %}
 {% block content%}
 
-<br><br>
-<h1 class="" style="font-weight:600">{{post.Title}}</h1>
+<br>
+<div class="row">
+    <div class="col-4">
+        <h1 class="" style="font-weight:600">{{post.Title}}</h1>
+    </div>
 
-<hr>
+    <div class="col-7">
+
+            {% if msg == "Make payment" %}
+         <button type="button" style="margin-left:70%;%" class="btn btn-info btn-sm">
+            <a href="{% url 'pay' %}">Connection accepted</a></button>
+            {%else %}
+           <button type="button" style="margin-left:70%;%" class="{{button_class}}" data-toggle="modal"
+                data-target="#myModal">  {{msg}} </button>
+
+            {% endif %}
+
+
+    </div>
+
+</div>
+<hr/>
 
 <div style="font-size:20px; padding-right:10%">
 
-    {{post.Description}}
+    <img src={{post.Img}} style="margin-left:5%" alt="" width="600" height="400">
+    <p> {{post.Description}}</p>
 
 
-    <!--    <img src={{post.Img}} alt="">-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" data-backdrop="false" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: rgba(0, 0, 0, 0.5);">
+        <br><br>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel"> Sending an invitation </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <p>
+                        <div class="row">
+                            <div class="col-7  ">Confirm id</div>
+                            <div class="col-5"><input class="form-control" type="text"
+                                                      placeholder={{post.createdby_id}}
+                                                      name="sendto_id" style="width:80px;"></div>
+                        </div>
+                        </p>
 
 
-    <br>
+                        <textarea class="form-control" placeholder="You can add a note to personalize your invitation"
+                                  rows="6" name="message"></textarea>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-primary">Send</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <br>
     <div class="tabbable">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs" style="z-index:120">
             <li class="active pr-4"><a href="#tab1" data-toggle="tab">Summary</a></li>
             <li class="pr-4"><a href="#tab2" data-toggle="tab">Financials</a></li>
             <li><a href="#tab3" data-toggle="tab">Recent Activity</a></li>
@@ -31,23 +85,23 @@
                     <br>
                     Progress: {{post.Progress}}
                     <br>
-                     {% if post.Progress <= 30%}
-                                    <div class="progress progress-xs margin-vertical-1"
-                                         style="height:0.4em; width:150px">
-                                        <div class="progress-bar bg-danger" style="width: 10%;"></div>
-                                    </div>
-                                    {% elif post.Progress <= 60 %}
-                                    <div class="progress progress-xs margin-vertical-1"
-                                         style="height:0.5em; width:150px">
-                                        <div class="progress-bar bg-primary" style="width: 50%;"></div>
-                                    </div>
-                                    {% elif post.Progress <= 90 %}
-                                    <div class="progress progress-xs margin-vertical-1"
-                                         style="height:0.5em; width:150px">
-                                        <div class="progress-bar bg-success" style="width: 100%;"></div>
-                                    </div>
-                                    {% endif %}
-                    </p>
+                    {% if post.Progress <= 30%}
+                <div class="progress progress-xs margin-vertical-1"
+                     style="height:0.4em; width:150px">
+                    <div class="progress-bar bg-danger" style="width: 10%;"></div>
+                </div>
+                {% elif post.Progress <= 60 %}
+                <div class="progress progress-xs margin-vertical-1"
+                     style="height:0.5em; width:150px">
+                    <div class="progress-bar bg-primary" style="width: 50%;"></div>
+                </div>
+                {% elif post.Progress <= 90 %}
+                <div class="progress progress-xs margin-vertical-1"
+                     style="height:0.5em; width:150px">
+                    <div class="progress-bar bg-success" style="width: 100%;"></div>
+                </div>
+                {% endif %}
+                </p>
             </div>
             <div class="tab-pane" id="tab2">
                 <br>
@@ -67,11 +121,16 @@
                     Status: <br> {{post.FinancialStatus}}
                     <br></p>
             </div>
+
         </div>
+
     </div>
 
+
 </div>
+
 <script>
+
     $(function(){
   var hash = window.location.hash;
   hash && $('ul.nav a[href="' + hash + '"]').tab('show');
@@ -83,6 +142,18 @@
     $('html,body').scrollTop(scrollmem);
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
