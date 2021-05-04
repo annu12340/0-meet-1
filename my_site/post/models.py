@@ -17,6 +17,7 @@ class PostIdeaModel(models.Model):
     History = models.CharField(max_length=200)
 
     createdby_id= models.IntegerField()
+    createdby_name= models.CharField(max_length=200)
     createdby_image = models.CharField(max_length=200)
 
 
@@ -40,6 +41,7 @@ class Notification(models.Model):
         sendfrom_name = models.CharField(max_length=200)
         sendfrom_img = models.CharField(max_length=200)
         sendto_id= models.IntegerField()
+        sendto_name = models.CharField(max_length=200)
         status = models.CharField(max_length=200, default="Pending")
         message= models.CharField(max_length=200)
 

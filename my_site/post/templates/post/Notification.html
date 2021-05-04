@@ -5,10 +5,9 @@
 
 {% if user.is_authenticated %}
 
-
 <div class="row">
 
-    <div class="col-9">
+    <div class="col-8">
         <br> <br>
 
         <h3>Manage invitations</h3>
@@ -36,13 +35,12 @@
                         Hello, I would like to connect with you to learn more about your idea
                         {% endif %}
                         <br>
-                        <form action="" method="post" type="hidden">
-                            {% csrf_token %}
-
-                            <button class="btn btn-outline-secondary btn-sm" >Ignore</button>
-
-                        </form>
-                         <a href="{%  url 'accept' id=n.sendfrom_id %}"><button class="btn btn-info btn-sm">Accept</button></a>
+                        <a href="{%  url 'accept' id=n.sendfrom_id %}">
+                            <button class="btn btn-outline-secondary btn-sm">Ignore</button>
+                        </a>
+                        <a href="{%  url 'accept' id=n.sendfrom_id %}">
+                            <button class="btn btn-info btn-sm">Accept</button>
+                        </a>
                     </div>
                 </div>
 
@@ -54,6 +52,26 @@
         </div>
     </div>
 
+    <!--Recent activities-->
+    <div class="col-4">
+        <br> <br>
+
+        <h4>Recent activities</h4>
+        <div class=" homePage-cards"
+             style="box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); background:#fff; padding:6%;  border-radius:1%">
+
+            <ul>
+
+                {% for recent in recent_activities %}
+
+                <li>Request sent to {{recent.sendto_name}} is {{recent.status}}</li>
+
+
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
 
 </div>
 </div>

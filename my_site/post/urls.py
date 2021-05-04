@@ -8,4 +8,5 @@ urlpatterns = [
     path('addEvents/', views.addEvents, name="addEvents"),
     path('mynetwork/', views.network, name="mynetwork"),
     path('accept/<int:id>', views.accept, name="accept"),
+    path('ignore/<int:id>', views.ignore, name="ignore"),
 ]
