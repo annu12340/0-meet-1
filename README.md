@@ -12,6 +12,10 @@ Here we want to provide a platform for people to share the lessons they learnt, 
 
 https://www.youtube.com/watch?v=1gefxztXJM8&ab_channel=AnnuJolly
 
+#### Tech stack
+
+Django, HTML, CSS, Bootstrap, SQLite, Redis, Stripe payment
+
 ### Screenshots
 
 #### Registeration page
@@ -29,4 +33,4 @@ https://www.youtube.com/watch?v=1gefxztXJM8&ab_channel=AnnuJolly
 
 ![5](https://user-images.githubusercontent.com/43414928/133894884-c4bf3622-c32c-4a2e-8681-0be30bd871ab.png)
 
-The app also allows buyers and sellers to have a real time communication between each other to facilitate further discussions
+The app also allows buyers and sellers to have a real time communication between each other to facilitate further discussions and have integrated Stripe payment facility as well
